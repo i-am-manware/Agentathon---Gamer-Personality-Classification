@@ -1,0 +1,32 @@
+# Runtime data — the database, the generated session secret, JSON fallback.
+# Never commit these: the secret is per-install and the DB is local state.
+data/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# Local configuration
+.env
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.npm/
+
+# Editors & OS
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Scratch
+tmp/
+tmp-check/
+*.log

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0a1220"/>
+      <stop offset="100%" stop-color="#05060d"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="64" height="64" rx="13" fill="url(#g)"/>
+  <rect x="1" y="1" width="62" height="62" rx="12.5" fill="none" stroke="#4dd4ff" stroke-opacity=".28" stroke-width="1.5"/>
+
+  <g transform="translate(32 32)" filter="url(#glow)">
+    <!-- hexagon -->
+    <polygon points="0,-21 18.2,-10.5 18.2,10.5 0,21 -18.2,10.5 -18.2,-10.5"
+             fill="none" stroke="#4dd4ff" stroke-opacity=".5" stroke-width="1.6"/>
+    <!-- spokes -->
+    <g stroke="#4dd4ff" stroke-opacity=".22" stroke-width="1">
+      <line x1="0" y1="0" x2="0" y2="-21"/>
+      <line x1="0" y1="0" x2="18.2" y2="-10.5"/>
+      <line x1="0" y1="0" x2="18.2" y2="10.5"/>
+      <line x1="0" y1="0" x2="0" y2="21"/>
+      <line x1="0" y1="0" x2="-18.2" y2="10.5"/>
+      <line x1="0" y1="0" x2="-18.2" y2="-10.5"/>
+    </g>
+    <!-- vertices -->
+    <g fill="#4dd4ff" fill-opacity=".75">
+      <circle cx="0" cy="-21" r="2"/>
+      <circle cx="18.2" cy="10.5" r="2"/>
+      <circle cx="-18.2" cy="10.5" r="2"/>
+    </g>
+    <!-- the plotted point -->
+    <circle cx="7" cy="-6" r="4.6" fill="#05060d" stroke="#4dd4ff" stroke-width="2.4"/>
+    <circle cx="7" cy="-6" r="1.7" fill="#ffffff"/>
+  </g>
+</svg>

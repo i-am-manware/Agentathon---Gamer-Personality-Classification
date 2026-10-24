@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" data-theme="void">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>SPAWNPOINT — where do you land on the Playstyle Plane?</title>
+    <meta
+      name="description"
+      content="A 24-question gamer personality classifier. Answer honestly and get plotted on a live two-dimensional Playstyle Plane, with a full breakdown, a written reading, and a shareable card."
+    />
+    <meta name="theme-color" content="#05060d" />
+    <meta name="color-scheme" content="dark" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SPAWNPOINT — find your spawn point" />
+    <meta
+      property="og:description"
+      content="24 questions. Six archetypes. One coordinate on the Playstyle Plane."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/app.webmanifest" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/quiz.css" />
+    <link rel="stylesheet" href="/css/results.css" />
+  </head>
+  <body>
+    <div class="crt" aria-hidden="true">
+      <div class="crt__scanlines"></div>
+      <div class="crt__vignette"></div>
+      <div class="crt__flicker"></div>
+    </div>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <a class="brand" href="/" data-link>
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28">
+            <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".45" />
+            <circle cx="16" cy="16" r="7.5" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".7" />
+            <path d="M16 2.5v27M2.5 16h27" stroke="currentColor" stroke-width="1" opacity=".35" />
+            <circle cx="21.5" cy="10.5" r="2.6" fill="currentColor" />
+          </svg>
+        </span>
+        <span class="brand__text">
+          <strong>SPAWNPOINT</strong>
+          <em>playstyle plane</em>
+        </span>
+      </a>
+
+      <nav class="topnav" aria-label="Main">
+        <a href="/" data-link class="topnav__link">Take the quiz</a>
+        <a href="/plane" data-link class="topnav__link">The plane</a>
+        <a href="/about" data-link class="topnav__link">How it works</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <button class="icon-btn" id="sfx-toggle" type="button" aria-pressed="true" title="Toggle sound">
+          <span class="icon-btn__glyph" aria-hidden="true">♪</span>
+          <span class="sr-only">Toggle sound effects</span>
+        </button>
+        <div id="account-slot" class="account-slot">
+          <button class="btn btn--ghost btn--sm" id="signin-open" type="button">Sign in</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="app" tabindex="-1"></main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <p>
+          <strong>SPAWNPOINT</strong> — six archetypes, three opposing pairs, one coordinate.
+          No accounts required, ever.
+        </p>
+        <p class="footer__meta">
+          <span id="footer-status">ready</span>
+          <span aria-hidden="true">·</span>
+          <a href="/about" data-link>methodology</a>
+          <span aria-hidden="true">·</span>
+          <span>v1.0</span>
+        </p>
+      </div>
+    </footer>
+
+    <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+    <div class="modal" id="modal-root" hidden></div>
+
+    <noscript>
+      <div class="noscript">
+        SPAWNPOINT needs JavaScript to draw the Playstyle Plane. The API is still
+        available at <code>/api/quiz</code> and <code>/api/score</code> if you want
+        to play with it directly.
+      </div>
+    </noscript>
+
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

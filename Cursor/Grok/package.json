@@ -1,0 +1,14 @@
+{
+  "name": "rift-index",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Rift Index — a playstyle cartography. Twenty-four situations, six signals, one coordinate.",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test server/scoring.test.js"
+  }
+}

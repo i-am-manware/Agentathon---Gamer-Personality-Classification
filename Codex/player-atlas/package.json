@@ -1,0 +1,14 @@
+{
+  "name": "player-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Find your coordinates. A dependency-free gamer personality atlas.",
+  "engines": { "node": ">=22.11.0" },
+  "scripts": {
+    "start": "node --experimental-sqlite server.mjs",
+    "dev": "node --experimental-sqlite --watch server.mjs",
+    "test": "node --experimental-sqlite --test tests/*.test.mjs"
+  },
+  "license": "MIT"
+}

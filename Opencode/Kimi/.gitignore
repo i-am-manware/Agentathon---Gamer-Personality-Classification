@@ -1,0 +1,11 @@
+node_modules/
+data/store.json
+data/*.tmp
+data/*.corrupt-*
+data/smoke-store.json
+data/browser-store.json
+data/png-store.json
+data/test-store.json
+test-out.log
+test-err.log
+.devtest/

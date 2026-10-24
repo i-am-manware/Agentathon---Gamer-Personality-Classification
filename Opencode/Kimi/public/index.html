@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HEXAXIS — A Cartography of the Gamer Soul</title>
+  <meta name="description" content="Twenty-four questions. Six opposing pulls. One star chart of the way you play. HEXAXIS maps your gamer soul onto the plane of six archetypes.">
+  <!--__OG__-->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="/" data-nav>
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".55"/>
+        <path d="M20 5 L33.4 27.5 L6.6 27.5 Z" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".8"/>
+        <path d="M20 35 L6.6 12.5 L33.4 12.5 Z" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".8"/>
+        <circle cx="20" cy="20" r="2.6" fill="currentColor"/>
+      </svg>
+      <span class="brand-word">HEXAXIS</span>
+    </a>
+    <nav class="topnav">
+      <span id="whoami" class="whoami" hidden></span>
+      <a href="/dashboard" id="nav-atlas" data-nav class="navlink" hidden>Your Atlas</a>
+      <button id="nav-auth" class="btn btn-ghost btn-sm">Sign in</button>
+      <button id="nav-logout" class="btn btn-ghost btn-sm" hidden>Log out</button>
+    </nav>
+  </header>
+
+  <main id="app">
+
+    <!-- ═══════════ LANDING ═══════════ -->
+    <section id="screen-landing" class="screen">
+      <div class="hero">
+        <p class="eyebrow reveal">A cartography of the gamer soul</p>
+        <h1 class="hero-title reveal">Every player is pulled<br>by <em>six stars</em>.</h1>
+        <p class="hero-sub reveal">Twenty-four questions. Three ancient rivalries — glory, pursuit, method.
+        One point of light on the plane that is unmistakably, measurably <strong>you</strong>.</p>
+        <div class="hero-cta reveal">
+          <a href="/quiz" data-nav class="btn btn-gold btn-lg" id="cta-begin">Begin the Reading</a>
+          <span class="cta-note">No account needed · 3 minutes · your star is yours to keep</span>
+        </div>
+        <div class="hero-chart reveal">
+          <canvas id="demo-chart" aria-label="A star chart of past readers drifting across the six pulls"></canvas>
+        </div>
+        <div class="scroll-hint" aria-hidden="true"><span></span>meet the six</div>
+      </div>
+
+      <div class="section-head">
+        <p class="eyebrow">The six pulls</p>
+        <h2>Three rivalries decide<br>where your star comes to rest.</h2>
+      </div>
+      <div id="archetype-grid" class="archetype-grid"></div>
+
+      <div class="section-head">
+        <p class="eyebrow">The method</p>
+        <h2>How the Atlas reads you</h2>
+      </div>
+      <div class="method-grid">
+        <article class="method-card">
+          <span class="method-num">I</span>
+          <h3>Twenty-four trials</h3>
+          <p>Rapid-fire duels of instinct — no right answers, no wrong ones, only doors. Answer with your gut; the Atlas prefers it honest.</p>
+        </article>
+        <article class="method-card">
+          <span class="method-num">II</span>
+          <h3>Six stars pull</h3>
+          <p>Every choice tugs one of six archetypes. Three opposing pairs — Arena/Hearth, Horizon/Vault, Orrery/Comet — triangulate your position.</p>
+        </article>
+        <article class="method-card">
+          <span class="method-num">III</span>
+          <h3>Your star is charted</h3>
+          <p>You receive a place on the plane, a name for what you are, a reading of your nature — and a portrait worth sharing.</p>
+        </article>
+      </div>
+
+      <div class="final-cta">
+        <p class="eyebrow">The Atlas is open</p>
+        <h2>Where do <em>you</em> land?</h2>
+        <a href="/quiz" data-nav class="btn btn-gold btn-lg">Begin the Reading</a>
+      </div>
+
+      <footer class="foot">
+        <span>HEXAXIS · hand-built with zero dependencies · your answers are scored server-side and never sold to the void</span>
+      </footer>
+    </section>
+
+    <!-- ═══════════ QUIZ ═══════════ -->
+    <section id="screen-quiz" class="screen" hidden>
+      <div class="quiz-wrap">
+        <div class="quiz-head">
+          <div class="quiz-progress"><div id="quiz-progress-fill" class="quiz-progress-fill"></div></div>
+          <div class="quiz-meta">
+            <span id="quiz-counter" class="mono">TRIAL I · XXIV</span>
+            <button id="quiz-back" class="linklike" hidden>&larr; reconsider</button>
+          </div>
+        </div>
+        <div id="quiz-card" class="quiz-card">
+          <p id="quiz-question" class="quiz-question"></p>
+          <div class="quiz-options">
+            <button id="opt-a" class="quiz-option">
+              <span class="opt-key mono">A</span>
+              <span class="opt-text"></span>
+            </button>
+            <button id="opt-b" class="quiz-option">
+              <span class="opt-key mono">B</span>
+              <span class="opt-text"></span>
+            </button>
+          </div>
+          <p class="quiz-hint">answer with your gut — the Atlas prefers it honest &nbsp;·&nbsp; keys <span class="mono">A</span>/<span class="mono">B</span> work too</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ ANALYZING ═══════════ -->
+    <section id="screen-analyzing" class="screen" hidden>
+      <div class="analyzing-wrap">
+        <div class="astrolabe" aria-hidden="true">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
+          <div class="ring-core"></div>
+        </div>
+        <p id="analyzing-line" class="analyzing-line mono">Charting your star…</p>
+      </div>
+    </section>
+
+    <!-- ═══════════ RESULTS ═══════════ -->
+    <section id="screen-results" class="screen" hidden>
+      <div class="results-wrap">
+        <p class="eyebrow reveal" id="res-eyebrow">The Atlas has spoken</p>
+        <h2 id="res-title" class="res-title reveal">—</h2>
+        <p id="res-epithet" class="res-epithet reveal">—</p>
+        <div id="res-chips" class="res-chips reveal"></div>
+
+        <div class="res-grid">
+          <div class="panel chart-panel reveal">
+            <div class="panel-head">
+              <h3>Your place on the plane</h3>
+              <label class="souls-toggle"><input type="checkbox" id="toggle-souls" checked> <span>past readers</span></label>
+            </div>
+            <div class="chart-holder">
+              <canvas id="result-chart"></canvas>
+              <div id="pole-tip" class="pole-tip" hidden></div>
+            </div>
+            <p class="chart-note mono" id="coord-readout"></p>
+          </div>
+
+          <div class="panel reveal">
+            <div class="panel-head"><h3>The six pulls, weighed</h3></div>
+            <div id="axis-bars" class="axis-bars"></div>
+            <div class="pair-meters" id="pair-meters"></div>
+          </div>
+        </div>
+
+        <div class="panel insight-panel reveal">
+          <div class="panel-head"><h3>The reading</h3></div>
+          <div id="insight-body" class="insight-body"></div>
+        </div>
+
+        <div class="panel reveal">
+          <div class="panel-head"><h3>Kindred worlds</h3><span class="panel-note">where players like you tend to thrive</span></div>
+          <div id="games-row" class="games-row"></div>
+        </div>
+
+        <div class="share-panel reveal" id="share-panel">
+          <button id="btn-copy" class="btn btn-gold">Copy share link</button>
+          <button id="btn-png" class="btn btn-line">Download portrait</button>
+          <button id="btn-retake" class="btn btn-ghost">Take it again</button>
+          <button id="btn-save" class="btn btn-line" hidden>Save to your atlas</button>
+          <span id="saved-note" class="saved-note" hidden>✦ saved to your atlas</span>
+        </div>
+        <p class="share-cta" id="share-cta" hidden><a href="/quiz" data-nav class="btn btn-gold btn-lg">Chart your own star</a></p>
+      </div>
+    </section>
+
+    <!-- ═══════════ DASHBOARD ═══════════ -->
+    <section id="screen-dashboard" class="screen" hidden>
+      <div class="dash-wrap">
+        <p class="eyebrow">Your atlas</p>
+        <h2 id="dash-title">Every star you have charted</h2>
+        <p id="dash-drift" class="dash-drift" hidden></p>
+        <div id="dash-empty" class="dash-empty" hidden>
+          <p>No stars charted under this name yet.</p>
+          <a href="/quiz" data-nav class="btn btn-gold">Begin a Reading</a>
+        </div>
+        <div id="dash-list" class="dash-list"></div>
+        <div id="compare-panel" class="panel compare-panel" hidden>
+          <div class="panel-head">
+            <h3>Two readings, one sky</h3>
+            <button id="compare-close" class="linklike">close</button>
+          </div>
+          <div class="compare-grid">
+            <div class="chart-holder compare-chart"><canvas id="compare-chart"></canvas></div>
+            <div id="compare-deltas" class="compare-deltas"></div>
+          </div>
+          <p id="compare-note" class="chart-note mono"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 404 ═══════════ -->
+    <section id="screen-404" class="screen" hidden>
+      <div class="dash-wrap center">
+        <p class="eyebrow">Uncharted</p>
+        <h2>This corner of the Atlas is empty.</h2>
+        <p class="hero-sub">The star you seek was never charted — or the link was copied incompletely.</p>
+        <a href="/" data-nav class="btn btn-gold">Return to the observatory</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════ AUTH MODAL ═══════════ -->
+  <div id="auth-modal" class="modal-back" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="auth-heading">
+      <button id="auth-close" class="modal-close" aria-label="Close">&times;</button>
+      <p class="eyebrow">The Atlas remembers</p>
+      <h3 id="auth-heading">Keep your stars across devices</h3>
+      <div class="auth-tabs">
+        <button id="tab-signin" class="auth-tab active">Sign in</button>
+        <button id="tab-signup" class="auth-tab">New traveler</button>
+      </div>
+      <form id="auth-form" novalidate>
+        <label id="field-name" hidden>Display name
+          <input type="text" id="auth-name" maxlength="24" autocomplete="nickname" placeholder="e.g. moonlighter">
+        </label>
+        <label>Email
+          <input type="email" id="auth-email" required autocomplete="email" placeholder="you@somewhere.gg">
+        </label>
+        <label>Password
+          <input type="password" id="auth-password" required autocomplete="current-password" placeholder="8+ characters">
+        </label>
+        <p id="auth-error" class="auth-error" hidden></p>
+        <button type="submit" id="auth-submit" class="btn btn-gold btn-block">Sign in</button>
+      </form>
+      <p class="auth-note" id="auth-note">Accounts are optional — the reading is always free, always full.</p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="/js/chart.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

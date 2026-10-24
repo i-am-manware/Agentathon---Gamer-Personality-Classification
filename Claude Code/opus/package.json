@@ -1,0 +1,20 @@
+{
+  "name": "playerprint",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PLAYERPRINT \u2014 a gamer personality atlas. Zero-dependency Node + SQLite.",
+  "type": "module",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "migrate": "node scripts/migrate.js",
+    "seed": "node scripts/seed.js",
+    "reset": "node scripts/seed.js --reset",
+    "calibrate": "node scripts/calibrate.js",
+    "test": "node scripts/test.js"
+  },
+  "license": "MIT"
+}

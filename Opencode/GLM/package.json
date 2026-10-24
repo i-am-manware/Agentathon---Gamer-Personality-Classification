@@ -1,0 +1,17 @@
+{
+  "name": "spawnpoint",
+  "version": "1.0.0",
+  "description": "SPAWNPOINT — the gamer personality diagnostic. A zero-dependency app that maps your play personality onto the Great Map.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "test": "node --test",
+    "seed": "node scripts/seed.js"
+  }
+}

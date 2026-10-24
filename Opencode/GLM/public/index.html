@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SPAWNPOINT — the gamer personality diagnostic. 24 questions, six archetypes, three axes, one spawn point on the Great Map.">
+  <meta name="theme-color" content="#050807">
+  <meta property="og:title" content="SPAWNPOINT — find your spawn coordinates">
+  <meta property="og:description" content="A 24-query diagnostic that maps your gamer personality onto the Great Map.">
+  <title>SPAWNPOINT — the gamer personality diagnostic</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="crt" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#/" aria-label="SPAWNPOINT home">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__text">SPAWN<i>//</i>POINT</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#/" data-nav="home">Diagnostic</a>
+      <a href="#/map" data-nav="map">The Map</a>
+      <a href="#/quiz" data-nav="quiz">Run It</a>
+      <a href="#/profile" data-nav="profile" id="nav-profile">Save Data</a>
+    </nav>
+    <div class="session-slot" id="session-slot"></div>
+  </header>
+
+  <main id="view" class="site-main" tabindex="-1"></main>
+
+  <footer class="site-footer">
+    <div class="foot-inner">
+      <span class="foot-mark">SPAWNPOINT v1.0 — no trackers, no ads, one (1) session cookie at most</span>
+      <span class="foot-toggles">
+        <button class="toggle" id="toggle-crt" type="button" aria-pressed="true">CRT: <b>ON</b></button>
+        <button class="toggle" id="toggle-sound" type="button" aria-pressed="true">SFX: <b>ON</b></button>
+      </span>
+    </div>
+  </footer>
+
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

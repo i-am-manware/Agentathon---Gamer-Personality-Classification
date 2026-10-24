@@ -1,0 +1,9 @@
+{
+  "name": "PLAYERPRINT — the gamer soul atlas",
+  "short_name": "PLAYERPRINT",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F3EDE0",
+  "theme_color": "#F3EDE0",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

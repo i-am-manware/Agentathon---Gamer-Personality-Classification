@@ -1,0 +1,15 @@
+{
+  "name": "pixel-psyche",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pixel Psyche - a retro-arcade gamer personality scanner. Zero dependencies.",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node --test test/scoring.test.js test/share.test.js test/store.test.js test/auth.test.js test/api.test.js test/e2e.test.js"
+  }
+}

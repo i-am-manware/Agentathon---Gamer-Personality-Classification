@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>PLAYERPRINT — the gamer soul atlas</title>
+    <!--META-->
+    <meta name="theme-color" content="#F3EDE0" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#15130F" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=Space+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="/css/app.css">
+    <script src="/js/theme.js"></script>
+    <link rel="modulepreload" href="/shared/engine.js">
+    <link rel="modulepreload" href="/shared/content.js">
+    <script type="module" src="/js/app.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#view">Skip to content</a>
+    <header class="masthead">
+      <a class="brand" href="/" data-link aria-label="PLAYERPRINT home">
+        <svg class="brand-mark" viewBox="-12 -12 24 24" aria-hidden="true">
+          <polygon points="0,-10 8.66,-5 8.66,5 0,10 -8.66,5 -8.66,-5" class="bm-hex"/>
+          <circle r="2.6" class="bm-dot"/>
+        </svg>
+        <span class="brand-word" data-text="PLAYERPRINT">PLAYERPRINT</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="/atlas" data-link>Atlas</a>
+        <a href="/me" data-link class="nav-me"><span class="nav-long">Field </span>log</a>
+        <button type="button" class="theme-btn" id="theme-btn" aria-label="Toggle day / night print">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+        </button>
+        <button type="button" class="nav-auth" id="auth-btn">Sign in</button>
+      </nav>
+    </header>
+
+    <main id="view" tabindex="-1">
+      <noscript><p class="noscript">PLAYERPRINT needs JavaScript to run the quiz.</p></noscript>
+    </main>
+
+    <footer class="colophon">
+      <div class="colophon-inner">
+        <span>PLAYERPRINT · Vol. 01 · printed in six inks</span>
+        <span>No trackers. No ads. Your answers stay a 12-character code.</span>
+        <a href="/about" data-link>How the scoring works</a>
+      </div>
+    </footer>
+
+    <dialog id="auth-dialog" class="dialog" aria-labelledby="auth-title"></dialog>
+    <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+  </body>
+</html>

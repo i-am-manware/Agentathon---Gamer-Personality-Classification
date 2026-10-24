@@ -1,0 +1,17 @@
+{
+  "name": "hexaxis",
+  "version": "1.0.0",
+  "description": "HEXAXIS — a cartography of the gamer soul. 24 questions, six pulls, one star chart.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node scripts/seed.js",
+    "simulate": "node scripts/simulate.js",
+    "smoke": "node scripts/smoke.js"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "license": "MIT",
+  "private": true
+}

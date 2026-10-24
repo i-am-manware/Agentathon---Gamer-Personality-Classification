@@ -1,0 +1,20 @@
+{
+  "name": "SPAWNPOINT — Playstyle Plane",
+  "short_name": "Spawnpoint",
+  "description": "A 24-question gamer personality classifier that plots you on a two-dimensional Playstyle Plane.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#05060d",
+  "theme_color": "#05060d",
+  "categories": ["games", "entertainment", "lifestyle"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

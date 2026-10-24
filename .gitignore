@@ -1,0 +1,75 @@
+# Shared rules for every app; app-specific runtime data stays in local .gitignores.
+
+# Dependencies and package-manager caches (keep lockfiles in Git)
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/install-state.gz
+.pnp.*
+
+# Build output and tooling caches
+dist/
+dist-ssr/
+build/
+.cache/
+.vite/
+.turbo/
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+
+# Test output and browser automation state
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+blob-report/
+.playwright-mcp/
+/Opencode/GLM/shots/profile*/
+
+# Local environment files; keep templates available
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+!.env.template
+
+# Local databases and SQLite sidecars (keep seed data and source datasets)
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.sqlite3-journal
+
+# Logs, process state, and temporary files
+logs/
+*.log
+*.log.*
+*.pid
+*.pid.lock
+*.seed
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+*~
+
+# OS and local IDE state
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+.idea/
+*.suo
+*.user

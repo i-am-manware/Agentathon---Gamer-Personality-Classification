@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111714">
+  <meta name="description" content="You're more than your main. Find your place among six gamer archetypes with 24 playful questions, an interactive personality atlas, and a shareable player card.">
+  <meta property="og:title" content="Player Atlas — Find your coordinates">
+  <meta property="og:description" content="Same game. Different players. Discover your gaming personality in 24 questions.">
+  <title>Player Atlas — Find your coordinates</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css?v=2">
+  <script type="module" src="/app.js?v=2"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="header">
+    <a class="brand" href="/" data-action="home" aria-label="Player Atlas home"><img src="/favicon.svg" width="34" height="34" alt=""><span>player<span class="brand-accent">atlas</span><span class="brand-period">.</span></span></a>
+    <nav class="nav" aria-label="Main navigation"><a href="/" data-nav="home" class="active">The assessment</a><a href="/#archetypes" data-nav="archetypes">The archetypes</a><button data-action="method">How it works</button></nav>
+    <div class="header-actions"><button class="text-button atlas-link" data-action="history"><span class="tiny-orbit">◎</span> Your atlas</button><button class="button button-outline button-small" data-action="auth" id="account-button">Sign in <span aria-hidden="true">↗</span></button></div>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <footer class="footer"><a class="brand footer-brand" href="/" data-action="home">playeratlas.</a><p>A little self-discovery. A lot of play.</p><button data-action="method">Behind the coordinates</button><span>EST. 2026</span></footer>
+  <dialog id="modal" aria-labelledby="modal-title"><div id="modal-content"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PIXEL PSYCHE // Gamer Personality Scanner</title>
+    <meta
+      name="description"
+      content="Pixel Psyche is an arcade oracle that scans your player DNA across six archetypes and charts you on a live 2D plane. 25 questions, no account required."
+    />
+    <meta name="theme-color" content="#06080b" />
+    <meta property="og:title" content="PIXEL PSYCHE // Gamer Personality Scanner" />
+    <meta
+      property="og:description"
+      content="Take the 25-question scan, get charted as one of six gamer archetypes on a live player-DNA plane. Shareable results, zero accounts required."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%2306080b'/%3E%3Crect x='4' y='5' width='24' height='17' rx='3' fill='none' stroke='%237cf7d0' stroke-width='2'/%3E%3Ccircle cx='16' cy='13.5' r='4.5' fill='none' stroke='%23ffd43b' stroke-width='2'/%3E%3Ccircle cx='16' cy='13.5' r='1.4' fill='%23ff4d6d'/%3E%3Crect x='11' y='24' width='10' height='3' fill='%237cf7d0'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="crt" aria-hidden="true"></div>
+    <div class="crt-sweep" aria-hidden="true"></div>
+    <div class="crt-vignette" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="logo" href="#/" aria-label="Pixel Psyche home">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26">
+              <rect x="3" y="4" width="26" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="2.5" />
+              <circle cx="16" cy="13.5" r="5" fill="none" stroke="#ffd43b" stroke-width="2.5" />
+              <circle cx="16" cy="13.5" r="1.6" fill="#ff4d6d" />
+              <rect x="10" y="25" width="12" height="3.5" fill="currentColor" />
+            </svg>
+          </span>
+          <span class="logo-text">PIXEL<span class="logo-accent">PSYCHE</span></span>
+        </a>
+        <nav class="main-nav" id="main-nav">
+          <a href="#/quiz" data-nav="quiz">SCAN</a>
+          <a href="#/method" data-nav="method">METHOD</a>
+          <a href="#/archive" data-nav="archive">ARCHIVE</a>
+        </nav>
+        <div class="header-actions">
+          <button class="sfx-toggle" id="sfx-toggle" type="button" aria-pressed="true" title="Toggle retro sound effects">
+            SFX<span class="sfx-dot" aria-hidden="true"></span>
+          </button>
+          <div id="user-slot" class="user-slot"></div>
+        </div>
+      </div>
+    </header>
+
+    <main id="view" class="view" tabindex="-1"></main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p class="footer-line">
+          <span class="blink">&gt;</span> PIXEL PSYCHE is a fictional arcade oracle. No accounts required, ever.
+        </p>
+        <p class="footer-line dim">
+          6 archetypes · 25 questions · 1 coordinate · built with zero dependencies
+        </p>
+      </div>
+    </footer>
+
+    <div id="modal-root"></div>
+    <div id="toast-root" class="toast-root" aria-live="polite"></div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
